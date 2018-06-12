@@ -2,7 +2,7 @@
 cd /storage/
 mkdir scripts
 cd /storage/scripts
-script=retroflag-picase-libreelec
+script=retroflag-picase-libreelec-master
 
 if [ -e $script ];
 	then
@@ -11,7 +11,7 @@ if [ -e $script ];
 	else
 		wget "https://github.com/spiritualized/retroflag-picase-libreelec/archive/master.zip"
 		unzip master.zip
-		cd retroflag-picase-libreelec
+		cd retroflag-picase-libreelec-master
 		chmod +x libreelec-shutdown.sh
 		chmod +x libreelec-restart.sh
 fi
@@ -25,7 +25,8 @@ if grep -q "libreelec_SafeShutdown.py" "$File";
 	then
 		echo "Autostart already enabled. Doing nothing."
 	else
-		echo "python /storage/scripts/retroflag-picase-libreelec/libreelec_SafeShutdown.py &" >> $File
+		echo "python /storage/scripts/retroflag-picase-libreelec-master/libreelec_SafeShutdown.py &" >> $File
+		chmod +x $File
 		echo "Autostart enabled"
 fi
 #-----------------------------------------------------------
