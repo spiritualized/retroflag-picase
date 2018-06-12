@@ -2,7 +2,6 @@
 cd /storage/
 mkdir scripts
 cd /storage/scripts
-script=retroflag-picase-libreelec-master
 
 if [ -e $script ];
 	then
